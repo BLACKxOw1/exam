@@ -1,0 +1,22 @@
+@mixin general_button($paddingY, $paddingX, $bgcolor, $radius, $size, $color, $weight, $lineheight) {
+  padding-top: $paddingY;
+  padding-bottom: $paddingY;
+  padding-left: $paddingX;
+  padding-right: $paddingX;
+  background-color: $bgcolor;
+  border-radius: $radius;
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  line-height: $lineheight;
+  font-family: 'Rubik';
+}
+
+@mixin plar ($weight, $size, $lineheight, $Color, ) {
+  font-family: 'Rubik';
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $lineheight;
+  color: $Color;
+  letter-spacing: 0%;
+}
