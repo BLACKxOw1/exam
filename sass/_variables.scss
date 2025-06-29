@@ -102,6 +102,10 @@ a,
         li {
           @include plar(400, 16px, 100%, #4F5665);
 
+          &:hover {
+            text-decoration: underline 3px solid;
+            text-decoration-color: #F53855;
+          }
         }
       }
     }
@@ -132,6 +136,14 @@ a,
         &:hover {
           border: 1px solid #F53855;
           @include general_button(13px, 45px, #F53855, 50px, 16px, white, 500, 100%);
+        }
+
+        @media(max-width: 470px) {
+          @include general_button(10px, 35px, transparent, 50px, 16px, #F53855, 500, 100%);
+        }
+
+        @media(max-width: 370px) {
+          @include general_button(10px, 20px, transparent, 50px, 16px, #F53855, 500, 100%);
         }
       }
     }
@@ -237,14 +249,27 @@ a,
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(114px);
     box-shadow: 0px 25px 40px rgba(13, 16, 37, 0.100);
     -webkit-backdrop-filter: blur(114px);
     transition: all 0.3s ease;
 
+    @media(max-width){
+
+    }
+
+    @media (max-width: 992px) {
+      gap: 30px;
+      padding: 20px 0;
+    }
+
+    @media (max-width: 645px) {
+      height: auto;
+      flex-direction: column;
+      gap: 20px;
+      padding: 30px 10px;
+    }
 
     .user_1 {
       display: flex;
@@ -264,64 +289,100 @@ a,
       height: 125px;
       background-color: #EEEFF2;
     }
+
+    @media (max-width: 992px) {
+      .user_line {
+        width: 10px;
+        height: 80%;
+      }
+
+      .user_1 {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    // ✅ Mobile screens
+    @media (max-width: 645px) {
+      .user_1 {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .user_line {
+        width: 80%;
+        height: 3px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
   }
 
-  .head_4 {
-    padding-top: 96px;
+}
+
+
+.head_4 {
+  padding-top: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media(max-width:992px) {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+  }
+
+
+  .many1 {
+    min-width: 508px;
+    height: 414px;
+  }
+
+  .many2 {
+    align-self: flex-end;
 
     @media(max-width:992px) {
+      align-self: auto;
+    }
+
+    .many_h {
+      h2 {
+        @include plar(500, 35px, 50px, #0B132A);
+      }
+
+      p {
+        @include plar(400, 16px, 30px, #4F5665);
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+
+    .many_p {
       display: flex;
-      flex-direction: column;
+      gap: 10px;
       align-items: center;
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      p {
+        @include plar(400, 14px, 30px, #4F5665);
+      }
+
     }
 
-
-    .many1 {
-      min-width: 508px;
-      height: 414px;
-    }
-
-    .many2 {
-      align-self: flex-end;
-
-      @media(max-width:992px) {
-        align-self: auto;
-      }
-
-      .many_h {
-        h2 {
-          @include plar(500, 35px, 50px, #0B132A);
-        }
-
-        p {
-          @include plar(400, 16px, 30px, #4F5665);
-          padding-top: 20px;
-          padding-bottom: 20px;
-        }
-      }
-
-      .many_p {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-
-        img {
-          width: 24px;
-          height: 24px;
-        }
-
-        p {
-          @include plar(400, 14px, 30px, #4F5665);
-        }
-
-      }
-
-      .many_2 {
-        padding-bottom: 15px;
-      }
+    .many_2 {
+      padding-bottom: 15px;
     }
   }
 }
@@ -338,19 +399,55 @@ a,
     .main_head {
       padding-bottom: 60px;
 
+      .ffff {
+        display: none;
+
+        @media(max-width: 650px) {
+          display: flex;
+          flex-direction: column;
+        }
+
+        div {
+          h1 {
+            display: flex;
+            justify-content: center;
+            @include plar(500, 35px, 10px, #0B132A);
+            padding-bottom: 40px;
+          }
+
+          p {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include plar(400, 16px, 30px, #4F5665)
+          }
+        }
+      }
+
       div {
+
         h1 {
           display: flex;
           justify-content: center;
           @include plar(500, 35px, 50px, #0B132A);
           padding-bottom: 20px;
+
+          @media(max-width: 650px) {
+            display: none;
+          }
+
         }
 
         p {
           display: flex;
           flex-direction: column;
           align-items: center;
-          @include plar(400, 16px, 30px, #4F5665)
+          @include plar(400, 16px, 30px, #4F5665);
+
+          @media(max-width: 650px) {
+            display: none;
+          }
+
         }
       }
     }
@@ -776,10 +873,21 @@ a,
     //     border-right: none;
     //   }
     // }
-
-
-
   }
+
+  @media (max-width: 768px) {
+    .main4_group {
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+
+      .person {
+        width: 90%;
+        min-width: auto;
+      }
+    }
+  }
+
 
   .main4_group_1300 {
     display: flex;
@@ -825,11 +933,23 @@ a,
   position: relative;
   top: -125px;
 
+  @media(max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   div {
     .hard1 {
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media(max-width: 600px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
       .hard2 {
 
@@ -838,6 +958,10 @@ a,
 
           @media(max-width: 768px) {
             @include plar(500, 30px, 45px, #0B132A);
+
+            @media(max-width: 600px) {
+              text-align: center;
+            }
           }
         }
 
@@ -848,12 +972,21 @@ a,
           @media(max-width: 768px) {
             @include plar(400, 14px, 30px, #4F5665);
           }
+
+          @media(max-width: 600px) {
+            text-align: center;
+            padding-bottom: 20px;
+          }
         }
       }
 
       .button-122 {
         .hard_btn {
           button {
+            @media(max-width: 768px) {
+              @include general_button(14px, 45px, #F53838, 10px, 16px, white, 700, 25px);
+            }
+
             @include general_button(18px, 65px, #F53838, 10px, 16px, white, 700, 25px);
             border: none;
             box-shadow: 0px 15px 40px rgba(244, 63, 63, 0.393); // soft red shadow
